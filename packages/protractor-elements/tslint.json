@@ -6,6 +6,7 @@
   "rules": {
     "member-access": false,
     "no-return-await": false,
-    "variable-name": [ true, "ban-keywords", "check-format", "allow-leading-underscore" ]
+    "variable-name": [ true, "ban-keywords", "check-format", "allow-leading-underscore" ],
+    "curly": false
   }
 }
