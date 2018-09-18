@@ -15,7 +15,7 @@ describe(Select.name, () => {
     inactiveSelect = new Select(element(by.css(`.select-inactive`)));
   });
 
-  fit(
+  it(
     shouldImplement(
       Select.prototype.isPresent$.name,
       Select.prototype.isEnabled$.name,
@@ -29,13 +29,16 @@ describe(Select.name, () => {
       expect(await activeSelect.isDisplayed$()).toBeTruthy();
       expect(await activeSelect.getValue$()).toEqual(`None`);
 
+      await activeSelect.setValue$(`One`);
+      expect(await activeSelect.getValue$()).toEqual(`One`);
+
       expect(await inactiveSelect.isPresent$()).toBeTruthy();
-      expect(await inactiveSelect.isEnabled$()).toBeTruthy();
+      expect(await inactiveSelect.isEnabled$()).toBeFalsy();
       expect(await inactiveSelect.isDisplayed$()).toBeTruthy();
       expect(await inactiveSelect.getValue$()).toEqual(`None`);
 
-      await activeSelect.setValue$(`One`);
-      expect(await activeSelect.getValue$()).toEqual(`One`);
+      await inactiveSelect.setValue$(`One`);
+      expect(await inactiveSelect.getValue$()).toEqual(`None`);
     }
   );
 });
