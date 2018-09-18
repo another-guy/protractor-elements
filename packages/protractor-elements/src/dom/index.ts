@@ -6,3 +6,4 @@ export * from './input-radio';
 export * from './input-radio-option-info';
 export * from './input-text';
 export * from './select';
+export * from './interfaces';
