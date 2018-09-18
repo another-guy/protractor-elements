@@ -3,13 +3,13 @@ import { Element } from './element';
 
 export class Select extends Element {
   async getValue(): Promise<string> {
-    return await this._element.element(by.css(`option:checked`)).getText();
+    return await this._element!.element(by.css(`option:checked`)).getText();
   }
 
   async setValue(value: string): Promise<void> {
-    return await this._element
-      .all(by.cssContainingText(`option`, value))
-      .click();
+    return await this._element!.all(
+      by.cssContainingText(`option`, value)
+    ).click();
   }
 
   async selectByIndex(index: number | Promise<number>): Promise<void> {
@@ -24,6 +24,6 @@ export class Select extends Element {
   }
 
   private get allOptions(): ElementArrayFinder {
-    return this._element.all(by.css(`option`));
+    return this._element!.all(by.css(`option`));
   }
 }

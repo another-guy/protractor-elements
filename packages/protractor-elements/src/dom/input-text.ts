@@ -7,6 +7,6 @@ export class InputText extends InputBase {
 
   async setValue(text: string): Promise<void> {
     await this.clear();
-    await this._element.sendKeys(text);
+    await this._element!.sendKeys(text);
   }
 }

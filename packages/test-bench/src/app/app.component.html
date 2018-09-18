@@ -14,6 +14,22 @@
   </div>
 
   <div>
+    <span>Input-radiobutton</span>
+    <div>
+      <input id="input-radio-1" class="input-radio-color" name="input-radio-color" type="radio" value="value-red">
+      <label for="input-radio-1">Red</label>
+    </div>
+    <div>
+      <input id="input-radio-2" class="input-radio-color" name="input-radio-color" type="radio" value="value-green" checked>
+      <label for="input-radio-2">Green</label>
+    </div>
+    <div>
+      <input id="input-radio-3" class="input-radio-color" name="input-radio-color" type="radio" value="value-blue">
+      <label for="input-radio-3">Blue</label>
+    </div>
+  </div>
+
+  <div>
     <span>Button</span>
     <button class="inactive-button" (click)="handleClick('inactive-button')" disabled>Inactive Button</button>
     <button class="active-button" (click)="handleClick('active-button')">Active Button</button>
