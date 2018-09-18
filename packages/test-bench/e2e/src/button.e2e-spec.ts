@@ -1,6 +1,6 @@
 import { AppPage } from './app.component-object';
 import { Element, Button } from 'protractor-elements';
-import { by, element, browser } from 'protractor';
+import { by, element } from 'protractor';
 import { shouldImplement } from './testing/should-implement';
 
 describe(Button.name, () => {
@@ -19,32 +19,32 @@ describe(Button.name, () => {
 
   it(
     shouldImplement(
-      Button.prototype.isPresent.name,
-      Button.prototype.isEnabled.name,
-      Button.prototype.isDisplayed.name,
-      Button.prototype.getInnerText.name,
-      Button.prototype.click.name,
+      Button.prototype.isPresent$.name,
+      Button.prototype.isEnabled$.name,
+      Button.prototype.isDisplayed$.name,
+      Button.prototype.getInnerText$.name,
+      Button.prototype.click$.name,
     ),
     async () => {
-      expect(await activeButton.isPresent()).toBeTruthy();
-      expect(await activeButton.isEnabled()).toBeTruthy();
-      expect(await activeButton.isDisplayed()).toBeTruthy();
-      expect(await activeButton.getInnerText()).toEqual(`Active Button`);
+      expect(await activeButton.isPresent$()).toBeTruthy();
+      expect(await activeButton.isEnabled$()).toBeTruthy();
+      expect(await activeButton.isDisplayed$()).toBeTruthy();
+      expect(await activeButton.getInnerText$()).toEqual(`Active Button`);
 
-      expect(await inactiveButton.isPresent()).toBeTruthy();
-      expect(await inactiveButton.isEnabled()).toBeFalsy();
-      expect(await inactiveButton.isDisplayed()).toBeTruthy();
-      expect(await inactiveButton.getInnerText()).toEqual(`Inactive Button`);
+      expect(await inactiveButton.isPresent$()).toBeTruthy();
+      expect(await inactiveButton.isEnabled$()).toBeFalsy();
+      expect(await inactiveButton.isDisplayed$()).toBeTruthy();
+      expect(await inactiveButton.getInnerText$()).toEqual(`Inactive Button`);
 
-      expect(await buttonClickStatus.getInnerText()).toEqual(`none`);
+      expect(await buttonClickStatus.getInnerText$()).toEqual(`none`);
 
-      inactiveButton.click();
+      await inactiveButton.click$();
 
-      expect(await buttonClickStatus.getInnerText()).toEqual(`none`);
+      expect(await buttonClickStatus.getInnerText$()).toEqual(`none`);
 
-      activeButton.click();
+      await activeButton.click$();
 
-      expect(await buttonClickStatus.getInnerText()).toEqual(`active-button`);
+      expect(await buttonClickStatus.getInnerText$()).toEqual(`active-button`);
     }
   );
 });

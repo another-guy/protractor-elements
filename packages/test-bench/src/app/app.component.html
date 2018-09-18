@@ -2,38 +2,70 @@
 
 <div>
 
-  <div>
+  <div class="section">
     <span>Input-text</span>
-    <input class="input-text" type="text" value="initial text value">
+    <div class="section-item">
+      <input class="input-text" type="text" value="initial text value">
+    </div>
   </div>
 
-  <div>
+  <div class="section">
     <span>Input-checkbox</span>
-    <input class="input-checkbox-1" type="checkbox" checked>
-    <input class="input-checkbox-2" type="checkbox" >
+    <div class="section-item">
+      <input id="input-checkbox-1" class="input-checkbox-1" type="checkbox" checked>
+      <label for="input-checkbox-1">TODO...</label>
+    </div>
+    <div class="section-item">
+      <input id="input-checkbox-2" class="input-checkbox-2" type="checkbox" >
+      <label for="input-checkbox-2">TODO...</label>
+    </div>
   </div>
 
-  <div>
+  <div class="section">
     <span>Input-radiobutton</span>
-    <div>
-      <input id="input-radio-1" class="input-radio-color" name="input-radio-color" type="radio" value="value-red">
-      <label for="input-radio-1">Red</label>
-    </div>
-    <div>
-      <input id="input-radio-2" class="input-radio-color" name="input-radio-color" type="radio" value="value-green" checked>
-      <label for="input-radio-2">Green</label>
-    </div>
-    <div>
-      <input id="input-radio-3" class="input-radio-color" name="input-radio-color" type="radio" value="value-blue">
-      <label for="input-radio-3">Blue</label>
+    <div class="section-item">
+      <div>
+        <input id="input-radio-1" class="input-radio-color" name="input-radio-color" type="radio" value="value-red">
+        <label for="input-radio-1">Red</label>
+      </div>
+      <div>
+        <input id="input-radio-2" class="input-radio-color" name="input-radio-color" type="radio" value="value-green" checked>
+        <label for="input-radio-2">Green</label>
+      </div>
+      <div>
+        <input id="input-radio-3" class="input-radio-color" name="input-radio-color" type="radio" value="value-blue">
+        <label for="input-radio-3">Blue</label>
+      </div>
     </div>
   </div>
 
-  <div>
+  <div class="section">
     <span>Button</span>
-    <button class="inactive-button" (click)="handleClick('inactive-button')" disabled>Inactive Button</button>
-    <button class="active-button" (click)="handleClick('active-button')">Active Button</button>
-    <span class="button-click-status">{{ lastClickedButton }}</span>
+    <div class="section-item">
+      <button class="inactive-button" (click)="handleClick('inactive-button')" disabled>Inactive Button</button>
+    </div>
+    <div class="section-item">
+      <button class="active-button" (click)="handleClick('active-button')">Active Button</button>
+    </div>
+    <div class="section-item-silenced">
+      <span class="button-click-status">{{ lastClickedButton }}</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <span>Select</span>
+    <div class="section-item">
+      <select class="select-active">
+        <option value="">None</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+    <div class="section-item">
+      <select class="select-inactive" disabled>
+        <option value="">None</option>
+        <option value="1">One</option>
+      </select>
+    </div>
   </div>
 
 </div>

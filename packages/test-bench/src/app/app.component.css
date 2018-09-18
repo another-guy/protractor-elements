@@ -1,0 +1,15 @@
+.section {
+  padding: 10px;
+  margin: 10px;
+  border: solid silver 3px;
+}
+
+.section-item {
+  padding: 5px;
+  margin: 5px;
+  border: dashed silver 1px;
+}
+
+.section-item-silenced {
+  border: 0px;
+}

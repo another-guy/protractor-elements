@@ -15,16 +15,16 @@ describe(Element.name, () => {
 
   it(
     shouldImplement(
-      Element.prototype.isPresent.name,
-      Element.prototype.isEnabled.name,
-      Element.prototype.isDisplayed.name,
-      Element.prototype.getInnerText.name,
+      Element.prototype.isPresent$.name,
+      Element.prototype.isEnabled$.name,
+      Element.prototype.isDisplayed$.name,
+      Element.prototype.getInnerText$.name,
     ),
     async () => {
-      expect(await h1.isPresent()).toBeTruthy();
-      expect(await h1.isEnabled()).toBeTruthy();
-      expect(await h1.isDisplayed()).toBeTruthy();
-      expect(await h1.getInnerText()).toEqual(`Test Bench`);
+      expect(await h1.isPresent$()).toBeTruthy();
+      expect(await h1.isEnabled$()).toBeTruthy();
+      expect(await h1.isDisplayed$()).toBeTruthy();
+      expect(await h1.getInnerText$()).toEqual(`Test Bench`);
     }
   );
 });
