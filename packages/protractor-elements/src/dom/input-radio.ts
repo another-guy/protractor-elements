@@ -1,9 +1,8 @@
 import { ElementArrayFinder } from 'protractor';
-import { ListPageObject } from '../abstractions/list.page-object';
 import { Adapter } from './adapters/adapter';
 import { InputRadioOption } from './input-radio-option';
-import { IWithGetHiddenValue, IWithSetHiddenValue } from './interfaces';
-import { IWithItemList } from './interfaces/with-item-list';
+import { IWithGetHiddenValue, IWithItemList, IWithSetHiddenValue } from './interfaces';
+import { ListOf } from './list-of-items';
 
 export class InputRadio
   implements
@@ -17,8 +16,8 @@ export class InputRadio
     public _rootElementList: ElementArrayFinder,
   ) { }
 
-  items(): ListPageObject<InputRadioOption> {
-    return new ListPageObject<InputRadioOption>(element => new InputRadioOption(element!), this._rootElementList);
+  items(): ListOf<InputRadioOption> {
+    return new ListOf<InputRadioOption>(element => new InputRadioOption(element!), this._rootElementList);
   }
 
   async getHiddenValue$(): Promise<string> {

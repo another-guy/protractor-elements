@@ -1,6 +1,6 @@
 import { ElementArrayFinder, ElementFinder } from 'protractor';
 
-export class ListPageObject<TListItem> {
+export class ListOf<TListItem> {
   constructor(
     private _createT: (_: ElementFinder | undefined) => TListItem,
     protected _elementList: ElementArrayFinder

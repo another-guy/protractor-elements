@@ -1,5 +1,5 @@
-import { ListPageObject } from '../../abstractions';
+import { ListOf } from '../list-of-items';
 
 export interface IWithItemList<TItem> {
-  items(): ListPageObject<TItem>;
+  items(): ListOf<TItem>;
 }
