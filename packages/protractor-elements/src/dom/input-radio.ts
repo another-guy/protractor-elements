@@ -9,6 +9,9 @@ export class InputRadio
     IWithItemList<InputRadioOption>,
     IWithGetHiddenValue<string>,
     IWithSetHiddenValue<string>
+    // TODO  ???   IWithHiddenValueList
+    // TODO   IWithGetDisplayValue<string>
+    // TODO   IWithSetDisplayValue<string>
 {
   private _adapter = new Adapter();
 
