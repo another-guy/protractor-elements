@@ -20,24 +20,24 @@ describe(InputCheckbox.name, () => {
       InputCheckbox.prototype.isPresent$.name,
       InputCheckbox.prototype.isEnabled$.name,
       InputCheckbox.prototype.isDisplayed$.name,
-      InputCheckbox.prototype.getValue$.name,
-      InputCheckbox.prototype.setValue$.name,
+      InputCheckbox.prototype.getDisplayValue$.name,
+      InputCheckbox.prototype.setDisplayValue$.name,
     ),
     async () => {
       expect(await inputCheckbox1.isPresent$()).toBeTruthy();
       expect(await inputCheckbox1.isEnabled$()).toBeTruthy();
       expect(await inputCheckbox1.isDisplayed$()).toBeTruthy();
-      expect(await inputCheckbox1.getValue$()).toEqual(true);
+      expect(await inputCheckbox1.getDisplayValue$()).toEqual(true);
 
       expect(await inputCheckbox2.isPresent$()).toBeTruthy();
       expect(await inputCheckbox2.isEnabled$()).toBeTruthy();
       expect(await inputCheckbox2.isDisplayed$()).toBeTruthy();
-      expect(await inputCheckbox2.getValue$()).toEqual(false);
+      expect(await inputCheckbox2.getDisplayValue$()).toEqual(false);
 
-      await inputCheckbox1.setValue$(! await inputCheckbox1.getValue$());
-      await inputCheckbox2.setValue$(! await inputCheckbox2.getValue$());
-      expect(await inputCheckbox1.getValue$()).toEqual(false);
-      expect(await inputCheckbox2.getValue$()).toEqual(true);
+      await inputCheckbox1.setDisplayValue$(! await inputCheckbox1.getDisplayValue$());
+      await inputCheckbox2.setDisplayValue$(! await inputCheckbox2.getDisplayValue$());
+      expect(await inputCheckbox1.getDisplayValue$()).toEqual(false);
+      expect(await inputCheckbox2.getDisplayValue$()).toEqual(true);
     }
   );
 });

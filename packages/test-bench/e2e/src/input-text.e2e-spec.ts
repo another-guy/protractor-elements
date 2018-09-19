@@ -18,17 +18,17 @@ describe(InputText.name, () => {
       InputText.prototype.isPresent$.name,
       InputText.prototype.isEnabled$.name,
       InputText.prototype.isDisplayed$.name,
-      InputText.prototype.getValue$.name,
-      InputText.prototype.setValue$.name,
+      InputText.prototype.getDisplayValue$.name,
+      InputText.prototype.setDisplayValue$.name,
     ),
     async () => {
       expect(await inputText.isPresent$()).toBeTruthy();
       expect(await inputText.isEnabled$()).toBeTruthy();
       expect(await inputText.isDisplayed$()).toBeTruthy();
-      expect(await inputText.getValue$()).toEqual(`initial text value`);
+      expect(await inputText.getDisplayValue$()).toEqual(`initial text value`);
 
-      await inputText.setValue$(`new text value`);
-      expect(await inputText.getValue$()).toEqual(`new text value`);
+      await inputText.setDisplayValue$(`new text value`);
+      expect(await inputText.getDisplayValue$()).toEqual(`new text value`);
     }
   );
 });

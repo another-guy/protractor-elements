@@ -1,6 +1,9 @@
 import { browser, ElementFinder } from 'protractor';
 
 export class Adapter {
+  async getValueAttribute$(element: ElementFinder): Promise<string> {
+    return await element.getAttribute('value');
+  }
 
   async click$(element: ElementFinder): Promise<void> {
     return await element.click();

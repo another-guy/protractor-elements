@@ -1,6 +1,6 @@
-import { AppPage } from './app.component-object';
-import { InputRadio, InputRadioOptionInfo, InputBase } from 'protractor-elements';
 import { by, element } from 'protractor';
+import { InputRadio, InputRadioOption } from 'protractor-elements';
+import { AppPage } from './app.component-object';
 import { shouldImplement } from './testing/should-implement';
 
 describe(InputRadio.name, () => {
@@ -15,39 +15,38 @@ describe(InputRadio.name, () => {
 
   it(
     shouldImplement(
-      InputRadio.prototype.optionsCount$.name,
-      InputRadio.prototype.getOption$.name,
-      InputRadio.prototype.getSelectedValue$.name,
-      InputRadio.prototype.setSelectedValue$.name,
-      InputRadioOptionInfo.prototype.findRelatedLabel$.name,
-      InputRadioOptionInfo.prototype.getInput$.name,
-      InputBase.prototype.isPresent$.name,
-      InputBase.prototype.isEnabled$.name,
-      InputBase.prototype.isDisplayed$.name,
+      InputRadio.prototype.items.name,
+      InputRadio.prototype.getHiddenValue$.name,
+      InputRadio.prototype.setHiddenValue$.name,
+      InputRadioOption.prototype.findRelatedLabel$.name,
+      InputRadioOption.prototype.isPresent$.name,
+      InputRadioOption.prototype.isEnabled$.name,
+      InputRadioOption.prototype.isDisplayed$.name,
+      InputRadioOption.prototype.getDisplayValue$.name,
     ),
     async () => {
-      expect(await inputRadioColor.optionsCount$()).toEqual(3);
+      expect(await inputRadioColor.items().count$()).toEqual(3);
 
-      const optionRed = await inputRadioColor.getOption$(0);
-      expect(await (await optionRed.findRelatedLabel$()).getInnerText$()).toEqual(`Red`);
+      const optionRed = inputRadioColor.items().get(0);
+      expect(await (await optionRed.findRelatedLabel$()).getDisplayValue$()).toEqual(`Red`);
 
-      const optionGreen = await inputRadioColor.getOption$(1);
-      expect(await (await optionGreen.findRelatedLabel$()).getInnerText$()).toEqual(`Green`);
+      const optionGreen = await inputRadioColor.items().get(1);
+      expect(await (await optionGreen.findRelatedLabel$()).getDisplayValue$()).toEqual(`Green`);
 
-      const optionBlue = await inputRadioColor.getOption$(2);
-      expect(await (await optionBlue.findRelatedLabel$()).getInnerText$()).toEqual(`Blue`);
+      const optionBlue = await inputRadioColor.items().get(2);
+      expect(await (await optionBlue.findRelatedLabel$()).getDisplayValue$()).toEqual(`Blue`);
 
       await Promise.all([ optionRed, optionGreen, optionBlue ].map(async option => {
-        expect(await option.getInput$().isPresent$()).toBeTruthy();
-        expect(await option.getInput$().isEnabled$()).toBeTruthy();
-        expect(await option.getInput$().isDisplayed$()).toBeTruthy();
+        expect(await option.isPresent$()).toBeTruthy();
+        expect(await option.isEnabled$()).toBeTruthy();
+        expect(await option.isDisplayed$()).toBeTruthy();
       }));
 
-      // TODO Check disabled/not present/not displayed
+      // // TODO Check disabled/not present/not displayed
 
-      expect(await inputRadioColor.getSelectedValue$()).toEqual(`value-green`);
-      await inputRadioColor.setSelectedValue$(`value-red`);
-      expect(await inputRadioColor.getSelectedValue$()).toEqual(`value-red`);
+      expect(await inputRadioColor.getHiddenValue$()).toEqual(`value-green`);
+      await inputRadioColor.setHiddenValue$(`value-red`);
+      expect(await inputRadioColor.getHiddenValue$()).toEqual(`value-red`);
     }
   );
 });

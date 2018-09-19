@@ -36,15 +36,15 @@ describe(Button.name, () => {
       expect(await inactiveButton.isDisplayed$()).toBeTruthy();
       expect(await inactiveButton.getInnerText$()).toEqual(`Inactive Button`);
 
-      expect(await buttonClickStatus.getInnerText$()).toEqual(`none`);
+      expect(await buttonClickStatus.getDisplayValue$()).toEqual(`none`);
 
       await inactiveButton.click$();
 
-      expect(await buttonClickStatus.getInnerText$()).toEqual(`none`);
+      expect(await buttonClickStatus.getDisplayValue$()).toEqual(`none`);
 
       await activeButton.click$();
 
-      expect(await buttonClickStatus.getInnerText$()).toEqual(`active-button`);
+      expect(await buttonClickStatus.getDisplayValue$()).toEqual(`active-button`);
     }
   );
 });
