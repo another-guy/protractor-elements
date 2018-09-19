@@ -20,25 +20,28 @@ describe(Select.name, () => {
       Select.prototype.isPresent$.name,
       Select.prototype.isEnabled$.name,
       Select.prototype.isDisplayed$.name,
-      Select.prototype.getValue$.name,
-      Select.prototype.setValue$.name,
+      Select.prototype.getDisplayValue$.name,
+      Select.prototype.setDisplayValue$.name,
     ),
     async () => {
+      // TODO get/setHiddenValue
+      // TODO list values...
+
       expect(await activeSelect.isPresent$()).toBeTruthy();
       expect(await activeSelect.isEnabled$()).toBeTruthy();
       expect(await activeSelect.isDisplayed$()).toBeTruthy();
-      expect(await activeSelect.getValue$()).toEqual(`None`);
+      expect(await activeSelect.getDisplayValue$()).toEqual(`None`);
 
-      await activeSelect.setValue$(`One`);
-      expect(await activeSelect.getValue$()).toEqual(`One`);
+      await activeSelect.setDisplayValue$(`One`);
+      expect(await activeSelect.getDisplayValue$()).toEqual(`One`);
 
       expect(await inactiveSelect.isPresent$()).toBeTruthy();
       expect(await inactiveSelect.isEnabled$()).toBeFalsy();
       expect(await inactiveSelect.isDisplayed$()).toBeTruthy();
-      expect(await inactiveSelect.getValue$()).toEqual(`None`);
+      expect(await inactiveSelect.getDisplayValue$()).toEqual(`None`);
 
-      await inactiveSelect.setValue$(`One`);
-      expect(await inactiveSelect.getValue$()).toEqual(`None`);
+      await inactiveSelect.setDisplayValue$(`One`);
+      expect(await inactiveSelect.getDisplayValue$()).toEqual(`None`);
     }
   );
 });
