@@ -2,6 +2,10 @@
 
 Enabling abstraction levels in your [Protractor](https://github.com/angular/protractor) tests.
 
+## Status
+
+[![Known Vulnerabilities](https://snyk.io/test/npm/protractor-elements/badge.svg)](https://snyk.io/test/npm/protractor-elements)
+
 ## Install
 
 From [npm](https://www.npmjs.com/package/protractor-elements) via `npm` or `yarn` package managers.
