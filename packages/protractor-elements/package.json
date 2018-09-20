@@ -1,16 +1,34 @@
 {
   "name": "protractor-elements",
   "version": "0.0.0-d.update-documentation",
-  "description": "protractor-elements",
+  "description": "Enabling abstraction levels in your Protractor tests.",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/another-guy/protractor-elements/tree/master/packages/protractor-elements",
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Igor Soloydenko",
+    "email": "soloydenko@gmail.com",
+    "url": "https://github.com/another-guy/protractor-elements/tree/master/packages/protractor-elements"
   },
   "keywords": [
-    ""
+    "protractor",
+    "protractor elements",
+    "protractor-elements",
+    "elements",
+    "e2e",
+    "e2e tests",
+    "end-to-end",
+    "end-to-end tests",
+    "e2e testing",
+    "end-to-end testing",
+    "async",
+    "await",
+    "async/await",
+    "page-object",
+    "component-object",
+    "page object",
+    "component object",
+    "protractor utilities",
+    "angular"
   ],
   "files": [
     "lib"
