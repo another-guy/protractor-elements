@@ -34,7 +34,6 @@ export class ListOf<TListItem> {
     filterFn: (part: TListItem, index?: number) => boolean | Promise<boolean>
   ): Promise<TListItem[]> {
     const result: TListItem[] = [];
-    
     for (let itemIndex = 0; itemIndex < await this.count$(); itemIndex++) {
       const item = this.get(itemIndex);
       const predicateMatchBoolOrPromise = filterFn(item);
@@ -43,7 +42,6 @@ export class ListOf<TListItem> {
         await predicateMatchBoolOrPromise;
       if (matchesPredicate) result.push(item);
     }
-    
     return result;
   }
 }

@@ -24,4 +24,8 @@ lerna bootstrap
 cd packages/protractor-elements
 lerna add protractor
 
+###############################################
+
+# Before `lerna publish` make sure to run `npm login`.
+
 ```

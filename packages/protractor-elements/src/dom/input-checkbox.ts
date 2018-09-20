@@ -5,11 +5,12 @@ import { IClickable, IVisible, IWithClearableValue, IWithGetDisplayValue, IWithS
 export class InputCheckbox
   implements
     IClickable,
-//    IFocusable, // TODO
+    //    IFocusable, // TODO
     IVisible,
     IWithGetDisplayValue<boolean>,
     IWithSetDisplayValue<boolean>,
     IWithClearableValue
+    // TODO   IWithGetHiddenValue<boolean>
 {
   private _adapter = new Adapter();
 
@@ -44,4 +45,5 @@ export class InputCheckbox
   click$(): Promise<void> {
     return this._adapter.click$(this._element);
   }
+
 }
