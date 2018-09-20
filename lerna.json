@@ -2,5 +2,5 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.0.0-b.merge-to-master-for-publish"
+  "version": "0.0.0-c.rename-radio-and-checkbox-classes"
 }

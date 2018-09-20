@@ -1,6 +1,6 @@
 {
   "name": "protractor-elements",
-  "version": "0.0.0-b.merge-to-master-for-publish",
+  "version": "0.0.0-c.rename-radio-and-checkbox-classes",
   "description": "protractor-elements",
   "license": "MIT",
   "repository": "",
