@@ -1,6 +1,6 @@
 {
   "name": "protractor-elements",
-  "version": "0.0.0-d.update-documentation",
+  "version": "0.0.1",
   "description": "Enabling abstraction levels in your Protractor tests.",
   "license": "MIT",
   "repository": "https://github.com/another-guy/protractor-elements/tree/master/packages/protractor-elements",
